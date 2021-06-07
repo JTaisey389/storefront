@@ -6,9 +6,11 @@
 
 #### Links & Resources
 
-- [Github]()
+- [Github](https://github.com/JTaisey389/storefront)
 
-- [Pull Request]()
+- [Pull Request](https://github.com/JTaisey389/storefront/pulls)
+
+- [Deployed Site]()
 
 #### UML
 
