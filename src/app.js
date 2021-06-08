@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
-import Products from './components/products/details.js';
+import Products from '../src/store/products.js';
 import './app.css';
 
 export default function App() {
@@ -14,8 +14,7 @@ export default function App() {
         <h3>Electronics | Food</h3>
         <h1>ELECTRONICS</h1>
         <p>Category Description Goes Here</p>
-        {/* <Products> */}
-        {/* </Products> */}
+        <Products/>
         </body>
       </main>
     <Footer/>
