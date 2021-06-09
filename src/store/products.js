@@ -92,12 +92,6 @@ export function activate (name) {
     payload: name
   }
 }
-// export const switchCategory = (category) => {
-//   return {
-//     type: 'ACTIVE CATEGORY',
-//     payload: category
-//   }
-// }
 export const reset = () => {
   return {
     type: 'RESET'
