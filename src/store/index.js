@@ -6,14 +6,21 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import categoryReducer from './store-categories.js';
 import productReducer from './products.js';
 import cartReducer from './cart.js';
-// import thunk from '../middleware/thunk.js';
-// import apiReducer from './api-reducer.js'
+import thunk from '../middleware/thunk.js';
+import apiReducer from './api-reducer.js'
 
 
-let reducers = combineReducers({ categoryReducer, productReducer, cartReducer });
+let reducers = combineReducers({ 
+  categoryReducer, 
+  productReducer, 
+  cartReducer,
+  data: apiReducer,
+});
+// let reducers = combineReducers({ categoryReducer, productReducer, cartReducer });OLD CODE
 
 const storeIndex = () => {
-  return createStore(reducers, composeWithDevTools());
+  return createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
+  // return createStore(reducers, composeWithDevTools());OLD CODE
 }
 
 export default storeIndex();
