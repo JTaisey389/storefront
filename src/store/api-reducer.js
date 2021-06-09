@@ -1,3 +1,6 @@
+// API-REDUCER.JS => INDEX.JS => SIMPLECART.JS => APP.JS
+// API-REDUCER.JS => INDEX.JS => CART.JS => APP.JS
+
 let initialState = {
   apiActionCall: [],
 };
@@ -28,24 +31,20 @@ export default (state = initialState, action) => {
 export function getPayload () {
   return{
     type: 'GET',
-
   }
 }
 export function putPayload () {
   return{
     type: 'PUT',
-
   }
 }
 export function postPayload () {
   return{
     type: 'POST',
-
   }
 }
 export function deletePayload () {
   return{
     type: 'DELETE',
-
   }
 }
