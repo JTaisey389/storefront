@@ -3,6 +3,8 @@ import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Categories from './components/storefront/storefront-categories.js'
 import Products from '../src/components/storefront/products.js';
+// import SimpleCart from './components/simplecart/simplecart.js'
+// import Cart from '../src/store/cart.js';
 import { activate } from '../src/store/store-categories.js'
 import { connect } from 'react-redux';
 
@@ -12,9 +14,11 @@ function App(props) {
   return (
     <>
     <Header/>
+    {/* <SimpleCart/> */}
       <main>
         <body>
           <Categories/>
+          {/* <Cart/> */}
         <h1>Browse our Categories</h1>
         <h3><span onClick={ () => props.activate('Electronics')}>Electronics</span> | <span onClick={ () => props.activate('Food')}>Food</span></h3>
         <h1>ELECTRONICS</h1>
