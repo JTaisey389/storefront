@@ -3,13 +3,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Card, CardContent, Typography, IconButton } from '@material-ui/core';
 import { removeFromCart } from '../../store/cart.js';
-import DeleteIcon from '@material-ui/icons';
+// import DeleteIcon from '@material-ui/icons';
 // import products from '../storefront/products';
 // TODO import CSS 
 
 // ./src/components/simplecart/simplecart.js
 // Attempted import error: '@material-ui/icons' does not contain a default export (imported as 'DeleteIcon').
 const SimpleCart = props => {
+  console.log(props);
   return (
     <>
       <section>
@@ -21,7 +22,7 @@ const SimpleCart = props => {
                   ${product.price} : {product.name}
                 </Typography>
                 <IconButton onClick={() => props.removeFromCart(product)}>
-                <DeleteIcon/>
+                {/* <DeleteIcon/> */}
                 </IconButton>
               </Card>
             );
