@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
 
 import { activate, reset } from '../../store/products.js';
+// import { cartReducer } from '../../store/cart.js'; // WHY THE F*CK IS THIS NOT WORKING IT'S BEING READ
+import cartReducer from '../../store/cart.js'; // WHY THE F*CK IS THIS NOT WORKING IT'S BEING READ
 
 const useStyles = makeStyles({
   root: {
@@ -62,7 +64,9 @@ const ActiveProduct = props => {
 
 const mapStateToProps = state => ({
   categoryReducer: state.categoryReducer,
-  productReducer: state.productReducer
+  productReducer: state.productReducer,
+  // ADDED CART REDUCER
+  cartReducer: state.cartReducer,
 })
 
 const mapDispatchToProps = { activate, reset }

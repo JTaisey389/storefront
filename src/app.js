@@ -2,10 +2,13 @@ import React from 'react';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Categories from './components/storefront/storefront-categories.js'
-import Products from '../src/components/storefront/products.js';
-// import SimpleCart from './components/simplecart/simplecart.js'
-// import Cart from '../src/store/cart.js';
-import { activate } from '../src/store/store-categories.js'
+// import Products from '../src/components/storefront/products.js';
+import Products from './components/storefront/products.js';
+import Cart from './components/simplecart/simplecart.js'
+// import './components/styles/style.scss';
+
+// import { activate } from '../src/store/store-categories.js'
+import { activate } from './store/store-categories.js'
 import { connect } from 'react-redux';
 
 import './app.css';
@@ -13,20 +16,22 @@ import './app.css';
 function App(props) {
   return (
     <>
-    <Header/>
-    {/* <SimpleCart/> */}
+      <Header/>
+      {/* <Categories/>
+      <Cart />
+      <Products/> */}
       <main>
         <body>
           <Categories/>
-          {/* <Cart/> */}
-        <h1>Browse our Categories</h1>
+          <Cart/>
+        {/* <h1>Browse our Categories</h1> */}
         <h3><span onClick={ () => props.activate('Electronics')}>Electronics</span> | <span onClick={ () => props.activate('Food')}>Food</span></h3>
         <h1>ELECTRONICS</h1>
-        <p>Category Description Goes Here</p>
+        {/* <p>Category Description Goes Here</p> */}
         <Products/>
         </body>
       </main>
-    <Footer/>
+      <Footer/>
     </>
   )
 };

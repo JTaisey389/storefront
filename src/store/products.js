@@ -1,3 +1,6 @@
+// PRODUCTS REDUCER => INDEX.JS => STOREFRONT PRODUCTS.JS => APP.JS
+// PRODUCTS REDUCER => INDEX.JS => STOREFRONT CART.JS => APP.JS
+
 let initialState = {
  products: [
    {

@@ -1,3 +1,5 @@
+// PRODUCTS REDUCER => INDEX.JS => STOREFRONT PRODUCTS.JS => APP.JS
+
 const initialState = {
   categoryList: [
     {name: 'Food', displayName: 'FOOD', description: 'Stuff for you to eat'},
