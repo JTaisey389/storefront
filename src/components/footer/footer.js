@@ -4,7 +4,7 @@ export default function Footer(props) {
   return (
     <>
       <footer>
-        <p>&copy; 2021 401 JavaScript</p>
+        <p>&copy; CodeFellows Jason Taisey 2021 401 JavaScript</p>
       </footer>
     </>
   )
