@@ -14,7 +14,7 @@
 
 - [Pull Request](https://github.com/JTaisey389/storefront/pulls)
 
-- [Deployed Site]()
+- [Deployed Site](https://60c0424506d4b360dcbf25f1--adoring-knuth-003df7.netlify.app/)
 
 #### UML
 
