@@ -25,7 +25,7 @@ const ActiveCategory = props => {
         })}
         </li>
       </ul>
-      {/* <h2 id="selectedCategory">{props.categoryReducer.selectedCategory}</h2> */}
+      <h2 id="selectedCategory">{props.categoryList.activate}</h2>
     </section>
   )
 }
@@ -36,7 +36,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch =>  ({
   activate: () => dispatch(activate()),
-  inactive: () => dispatch(inactive()),
+  // inactive: () => dispatch(inactive()),
   reset: () => dispatch(reset())
 });
 
