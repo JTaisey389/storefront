@@ -1,3 +1,4 @@
+// 'API-REDUCER' => STORE INDEX.JS
 let initialState = {
   results: [],
 };

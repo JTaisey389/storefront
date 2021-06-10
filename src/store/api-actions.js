@@ -1,6 +1,4 @@
-// API-REDUCER.JS => INDEX.JS => (ACTION>JS)APP.JS
-// API-REDUCER.JS => INDEX.JS => (ACTION.JS)APP.JS
-
+//'API-ACTIONS => STOREFRONT-PRODUCTS =>
 import superagent from 'superagent';
 
 let API_URL = 'https://api-js401.herokuapp.com/api/v1/products';
@@ -20,11 +18,13 @@ export const putRemoteData = (id, data) => async dispatch => {
 export const postRemoteData = (id, data) => async dispatch => {
   let response = await superagent.post(`${API_URL}/${id}`).send(data);
   console.log(response.body);
+  dispatch(getAction(response.body));
 }
 
 export const deleteRemoteData = (id) => async dispatch => {
   let response = await superagent.delete(`${API_URL}/${id}`).delete(data);
   console.log(response.body);
+  dispatch(getAction(response.body));
 }
 export const getAction = data => {
   return {

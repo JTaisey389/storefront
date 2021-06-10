@@ -1,3 +1,8 @@
+// STORE-CATEGORIES REDUCER => STOREFRONT-CATEGORIES => 'APP.JS'
+// STORE PRODUCTS => STOREFRONT PRODUCTS => 'APP.JS'
+// STORE CART => STOREFRONT PRODUCTS => 'APP.JS'
+// API-ACTIONS => STOREFRONT PRODUCTS => 'APP.JS'
+//CART REDUCER => SIMPLE CART => 'APP.JS'
 import React from 'react';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
@@ -7,24 +12,13 @@ import Cart from './components/simplecart/simplecart.js'
 
 import './app.css';
 
-function App(props) {
+function App() {
   return (
     <>
       <Header/>
-      {/* <Categories/>
-      <Cart />
-      <Products/> */}
-      <main>
-        <body>
-          <Categories/>
-          <Cart/>
-        {/* <h1>Browse our Categories</h1> */}
-        {/* <h3><span onClick={ () => props.activate('Electronics')}>Electronics</span> | <span onClick={ () => props.activate('Food')}>Food</span></h3> */}
-        <h1>ELECTRONICS</h1>
-        {/* <p>Category Description Goes Here</p> */}
-        <Products/>
-        </body>
-      </main>
+      <Cart/>
+      <Categories/>
+      <Products/>
       <Footer/>
     </>
   )

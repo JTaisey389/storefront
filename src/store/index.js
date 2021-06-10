@@ -1,5 +1,8 @@
-// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT PRODUCTS.JS => APP.JS
-// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT CATEGORIES.JS => APP.JS
+// STORE-CATEGORIES-REDUCER => 'STORE INDEX.JS' 
+// PRODUCTS-REDUCER => 'STORE INDEX.JS
+//CART-REDUCER.JS => 'STORE INDEX.JS'
+//API-REDUCER => 'STORE INDEX.JS'
+//THUNK => 'STORE INDEX.JS'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
