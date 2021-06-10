@@ -1,3 +1,6 @@
+// API-REDUCER.JS => INDEX.JS => (ACTION>JS)APP.JS
+// API-REDUCER.JS => INDEX.JS => (ACTION.JS)APP.JS
+
 import superagent from 'superagent';
 
 let API_URL = 'https://api-js401.herokuapp.com/api/v1/todo';

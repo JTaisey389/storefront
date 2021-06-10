@@ -1,5 +1,5 @@
 // STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT PRODUCTS.JS => APP.JS
-// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT CART.JS => APP.JS
+// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT CATEGORIES.JS => APP.JS
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 

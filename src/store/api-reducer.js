@@ -1,5 +1,5 @@
 // API-REDUCER.JS => INDEX.JS => SIMPLECART.JS => APP.JS
-// API-REDUCER.JS => INDEX.JS => CART.JS => APP.JS
+// API-REDUCER.JS => INDEX.JS => CART.JS => (ACTION.JS)APP.JS
 
 let initialState = {
   apiActionCall: [],

@@ -1,3 +1,4 @@
+// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT CATEGORIES.JS => APP.JS
 import React from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
