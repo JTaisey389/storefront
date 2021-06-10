@@ -1,5 +1,4 @@
-// PRODUCTS REDUCER => INDEX.JS => STOREFRONT PRODUCTS.JS => APP.JS
-
+// 'STORE-CATEGORIES-REDUCER' => STOREFRONT-CATEGORIES
 // const initialState = {
 //   categoryList: [
 //     {name: 'Food', displayName: 'FOOD', description: 'Stuff for you to eat'},
@@ -14,9 +13,8 @@ const initialState = {
     {_id: '5f0cdc25acac790017fc26cf', name:'Electronics', description: 'Making your life easier, one volt at a time'},
   ],
   selectedCategory: '',
-  // activeDescription: '',
 }
-//"count":2,"results":[{"_id":"5f0cdc15acac790017fc26ce","name":"food","description":"Stuff for you to eat","__v":0},{"_id":"5f0cdc25acac790017fc26cf","name":"electronics","description":"Making your life easier, one volt at a time","__v":0}]
+
 export default function categoriesReducer(state = initialState, action){
   const {type, payload } = action;
 
@@ -24,9 +22,7 @@ export default function categoriesReducer(state = initialState, action){
     case 'INACTIVE':
       return initialState;
     case 'ACTIVATE CATEGORY':
-      // console.log(payload);
       let selectedCategory = payload;
-      // return{...state, selectedCategory: payload.category, activeDescription: payload.description};
       return{...state, selectedCategory};
     case 'RESET':
         return initialState;

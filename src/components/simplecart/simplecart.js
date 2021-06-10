@@ -1,4 +1,4 @@
-// INDEX.JS => CART.JS => SIMPLECART.JS => APP.JS
+//CART REDUCER => 'SIMPLE CART' => APP.JS
 import React from 'react';
 import { connect } from 'react-redux';
 import { activate, reset } from '../../store/products.js'

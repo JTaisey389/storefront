@@ -1,3 +1,6 @@
+// STORE PRODUCTS => 'STOREFRONT PRODUCTS' => APP.JS
+// STORE CART => 'STOREFRONT PRODUCTS' => APP.JS
+// API-ACTIONS => 'STOREFRONT PRODUCTS' => APP.JS
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
