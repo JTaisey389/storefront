@@ -18,6 +18,8 @@
 
 ![UML](assets/storefront_day2.jpg)
 
+![UML](assets/storefront_day3.jpg)
+
 
 #### User Stories
 

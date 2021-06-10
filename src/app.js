@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Categories from './components/storefront/storefront-categories.js'
-// import Products from '../src/components/storefront/products.js';
 import Products from './components/storefront/products.js';
 import Cart from './components/simplecart/simplecart.js'
-// import './components/styles/style.scss';
+import * as actions from './store/actions.js';
 
-// import { activate } from '../src/store/store-categories.js'
 import { activate } from './store/store-categories.js'
 import { connect } from 'react-redux';
 
 import './app.css';
 
 function App(props) {
+  //===NEW CODE ===
+  const fetchData = (e) => {
+    e && e.preventDefault();
+    props.get() // Hit the API to get the information
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+  //===EXISTING CODE===
   return (
     <>
       <Header/>
@@ -35,6 +42,16 @@ function App(props) {
     </>
   )
 };
-const mapDispatchToProps = { activate }
+// const mapDispatchToProps = { activate } => OLD CODE
+const mapDispatchToProps = (dispatch, activate) => ({ 
+  get: () => dispatch(actions.getRemoteData()),
+  activate
+}) //check to see if activate is passed in a parameter 
 
-export default connect(null, mapDispatchToProps)(App);
+// NEW CODE
+const mapStateToProps = state => ({
+  data: state.data
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(null, mapDispatchToProps)(App); OLD CODE
