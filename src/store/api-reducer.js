@@ -1,8 +1,5 @@
-// API-REDUCER.JS => INDEX.JS => SIMPLECART.JS => APP.JS
-// API-REDUCER.JS => INDEX.JS => CART.JS => (ACTION.JS)APP.JS
-
 let initialState = {
-  apiActionCall: [],
+  results: [],
 };
 
 export default (state = initialState, action) => {
@@ -21,13 +18,6 @@ export default (state = initialState, action) => {
       // return{...state}
   } 
 }
-// ?? NOT SURE IF I NEED TO SET IT UP LIKE THIS, this would be for put, post, delete
-/* export function getPayload (name) {
-  return {
-    type: 'GET',
-    payload: name
-  }
-} */
 export function getPayload () {
   return{
     type: 'GET',

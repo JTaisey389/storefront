@@ -14,6 +14,7 @@ import {
   IconButton,
   Container,
 } from "@material-ui/core";
+import { addToCart } from '../../store/cart.js';
 
 import { makeStyles } from "@material-ui/core/styles";
 import { positions } from '@material-ui/system';
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   // },
 }));
 
-function App() {
+function Header(props) {
   const classes = useStyles();
   return (
     <>
@@ -77,10 +78,15 @@ function App() {
           <Typography variant="h6" className={classes.title}>
             OUR STORE
           </Typography>
-          <Button color="inherit" positions="right">CART (0)</Button>
+          <Button color="inherit" positions="right">CART ({props.cartReducer.cart.length})</Button>
         </Toolbar>
       </AppBar>
     </>
   );
 }
-export default App;
+const mapStateToProps = state => ({
+  cartReducer: state.cartReducer
+})
+
+const mapDispatchToProps = { addToCart }
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

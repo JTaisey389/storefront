@@ -14,7 +14,7 @@ let reducers = combineReducers({
   categoryReducer, 
   productReducer, 
   cartReducer,
-  data: apiReducer,
+  apiReducer,
 });
 // let reducers = combineReducers({ categoryReducer, productReducer, cartReducer });OLD CODE
 
