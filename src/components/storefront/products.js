@@ -1,27 +1,34 @@
-// STORE PRODUCTS REDUCER => INDEX.JS => STOREFRONT CATEGORIES.JS => APP.JS
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
-
+import * as actions from '../../store/api-actions.js';
 import { activate, reset } from '../../store/products.js';
-// import { cartReducer } from '../../store/cart.js'; // WHY THE F*CK IS THIS NOT WORKING IT'S BEING READ
-import cartReducer from '../../store/cart.js'; // WHY THE F*CK IS THIS NOT WORKING IT'S BEING READ
+import { addToCart } from '../../store/cart.js'; 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 345,
+    flexGrow: 1,
+    padding: theme.spacing(2)
   },
-});
+}));
 
 const ActiveProduct = props => {
+    const fetchData = (e) => {
+    e && e.preventDefault();
+    props.get() // Hit the API to get the information
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
   const classes = useStyles();
-  // console.log(props.categoryReducer.selectedCategory);
+  console.log('API-Products', props.apiReducer.results);
   return(
     <section>
       <ul>
-        {props.productReducer.products.map(product => {
-          if (product.categoryContainer === props.categoryReducer.selectedCategory)
+        {props.apiReducer.results.map(product => {
+          // if (product.categoryContainer === props.categoryReducer.selectedCategory)
           return (
             <>
               <Grid item xs={4}>
@@ -68,8 +75,13 @@ const mapStateToProps = state => ({
   productReducer: state.productReducer,
   // ADDED CART REDUCER
   cartReducer: state.cartReducer,
+  apiReducer: state.apiReducer,
 })
 
-const mapDispatchToProps = { activate, reset }
+const mapDispatchToProps = (dispatch) => ({
+  get: () => dispatch(actions.getRemoteData()),
+  add: (product) => dispatch (addToCart(product)),
+  reset: () => dispatch(reset())
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActiveProduct);

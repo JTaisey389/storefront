@@ -21,7 +21,7 @@ const ActiveCategory = props => {
       <h1 id="category">Browse Our Categories</h1>
       <ul>
         <li>
-          {props.categoryList.map(category => { return <Button color="primary" onClick={() => props.activate(category.name)} key={category.name}>
+          {props.categoryList.map(category => { return <Button color="primary" onClick={() => props.activate(category.name)} key={category.name}> {category.name}
           </Button>
         })}
         </li>
