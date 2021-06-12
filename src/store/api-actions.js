@@ -1,6 +1,7 @@
 //'API-ACTIONS => STOREFRONT-PRODUCTS =>
 import superagent from 'superagent';
 
+// let API_URL = 'https://api-twopointo-products.herokuapp.com/product';
 let API_URL = 'https://api-js401.herokuapp.com/api/v1/products';
 
 export const getRemoteData = () => dispatch => {
