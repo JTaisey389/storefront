@@ -7,6 +7,7 @@ export default (state = initialState, action) => {
   const { type, payload } = action;
   switch(type) {
     case 'GET':
+      // return {...state, results: payload};
       return payload;
     case 'PUT':
       return payload;
