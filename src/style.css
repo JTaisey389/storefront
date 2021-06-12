@@ -14,3 +14,11 @@ main {
 #cartButton {
   margin-left: 80%;
 }
+
+#cartCard {
+  margin-left: 80%;
+}
+/* .MuiCardContent-root:last-child {
+  overflow: auto;
+  padding-bottom: 24px;
+} */

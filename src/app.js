@@ -9,8 +9,7 @@ import Footer from './components/footer/footer.js';
 import Categories from './components/storefront/storefront-categories.js'
 import Products from './components/storefront/products.js';
 import Cart from './components/simplecart/simplecart.js'
-
-import './app.css';
+import './style.css';
 
 function App() {
   return (
