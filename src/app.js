@@ -9,6 +9,7 @@ import Footer from './components/footer/footer.js';
 import Categories from './components/storefront/storefront-categories.js'
 import Products from './components/storefront/products.js';
 import Cart from './components/simplecart/simplecart.js'
+// import ProductDetails from './components/storefront/product-details.js';
 import './style.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Cart/>
       <Categories/>
       <Products/>
+      {/* <ProductDetails/> */}
       <Footer/>
     </>
   )
