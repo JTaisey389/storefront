@@ -41,6 +41,11 @@
 - As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock
 - As a user, I want to know to that when I add an item to my cart, that it is removed from
 
+**Phase Four**
+
+- As a user, I want to see a full detail view of a product so that I can make a more informed choice about purchasing it.
+- As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered
+
 ### Architecture
 
 1. Begin with creating your application using create-react-app
