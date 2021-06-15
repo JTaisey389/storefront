@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Card, CardContent, Button, Typography, CardActions, CardActionArea, CardMedia } from '@material-ui/core';
 import { activeCategory, reset } from '../../store/products.js';
-import { increment, add, remove } from '../../store/cart.js';
+import { increment, addToCart, removeFromCart } from '../../store/cart.js';
 import * as actions from '../../store/api-actions.js';
 
 const useStyles = makeStyles({
@@ -46,17 +46,17 @@ function ProductDetails(props) {
             <Typography className={classes.title} color="textSecondary" gutterBottom>
             </Typography>
             <div>
-              {props.cartReducer.cart.map(product => {
+              {props.cartReducer.cart.map(products => {
                 return (
                   <>
                     <Typography>
-                      {product.name}
+                      {products.name}
                     </Typography>
                     <Typography className={classes.pos} color="textSecondary">
-                      {product.price}
+                      {products.price}
                     </Typography>
                     <CardActions>
-                      <Button onClick={() => props.remove(product)} size="small">Remove</Button>
+                      <Button onClick={() => props.remove(products)} size="small">Remove</Button>
                     </CardActions>
                   </>
                 )
@@ -65,7 +65,7 @@ function ProductDetails(props) {
           </CardContent>
         </Card>
       </Container>
-      <Container id="prudctDetails" className={classes.root}>
+      <Container id="productDetails" className={classes.root}>
         <h2 id="itemTitle">{selectedItem.name}</h2>
         <Card className={classes.root}>
           <CardActionArea>
@@ -97,9 +97,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, getState) => ({
   get: () => dispatch(actions.getRemoteData()),
-  add: (product) => dispatch(add(product)),
+  addToCart: (products) => dispatch(addToCart(products)),
   reset: () => dispatch(reset()),
-  remove: (product) => dispatch(remove(product))
+  removeFromCart: (products) => dispatch(removeFromCart(products))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);

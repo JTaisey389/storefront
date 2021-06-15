@@ -10,7 +10,6 @@ import {
   Toolbar,
   Paper,
   Typography,
-  Link,
   IconButton,
   Container,
 } from "@material-ui/core";
@@ -20,6 +19,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { positions } from '@material-ui/system';
 import { connect } from "react-redux";
 import { ArrowRight } from "@material-ui/icons";
+import { Link, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -78,7 +78,8 @@ function Header(props) {
           <Typography variant="h6" className={classes.title}>
             OUR STORE
           </Typography>
-          <Button color="inherit" positions="right">CART ({props.cartReducer.cart.length})</Button>
+          <Button color="inherit"><NavLink className={classes.link} to="/">HOME</NavLink></Button>
+          <Button id="cartButton" color="inherit"><NavLink className={classes.link} to="/cart">CART ({props.cartReducer.cart.length})</NavLink></Button>
         </Toolbar>
       </AppBar>
     </>
