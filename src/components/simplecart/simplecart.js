@@ -2,14 +2,20 @@
 import React from "react";
 import { connect } from "react-redux";
 import { activate, reset } from "../../store/products.js";
-import { Typography,Card, CardContent, CardActions, Button } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Typography,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { increment, addToCart, removeFromCart } from "../../store/cart.js";
 
-const useStyles = makeStyles ({ 
+const useStyles = makeStyles({
   root: {
     maxWidth: 275,
-    position: 'fixed',
+    position: "fixed",
   },
   title: {
     fontSize: 14,
@@ -17,11 +23,13 @@ const useStyles = makeStyles ({
   pos: {
     marginBottom: 12,
   },
-})
+});
 const SimpleCart = (props) => {
   const classes = useStyles();
   return (
     <>
+      <link rel="preconnect" href="https://fonts.gstatic.com"/>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
       <Card id="cartCard" className={classes.root}>
         <CardContent>
           <Typography variant="h5" component="h2">
@@ -41,7 +49,12 @@ const SimpleCart = (props) => {
                     {product.price}
                   </Typography>
                   <CardActions>
-                    <Button onClick={() => props.removeFromCart(product)} size="small">Remove</Button>
+                    <Button
+                      onClick={() => props.removeFromCart(product)}
+                      size="small"
+                    >
+                      Remove
+                    </Button>
                   </CardActions>
                 </>
               );
@@ -49,6 +62,7 @@ const SimpleCart = (props) => {
           </div>
         </CardContent>
       </Card>
+      
     </>
   );
 };

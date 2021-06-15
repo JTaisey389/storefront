@@ -8,27 +8,26 @@ import * as actions from '../../store/api-actions.js';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 700,
+    maxWidth: 600,
     margin: '0 auto',
   },
   media: {
-    height: 400,
+    height: 500,
   },
   cart: {
     maxWidth: 250,
     marginLeft: '10%',
     position: 'fixed',
-    zIndex: 950,
+    zIndex: 1500,
   },
   title: {
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 10,
   },
   button: {
     width: 650,
-    backgroundColor: '#9CADCE',
     color: 'white',
   }
 })
