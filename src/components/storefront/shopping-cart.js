@@ -82,16 +82,16 @@ function ShoppingCart(props) {
           <Typography className={classes.title} color="textSecondary" gutterBottom>
           </Typography>
           <div>
-            {props.cartReducer.cart.map(product => {
+            {props.cartReducer.cart.map(products => {
               return (
                 <div className={classes.form}>
                   <ListItemAvatar>
-                    <Avatar alt="Remy Sharp" src={product.image} />
+                    <Avatar alt="Remy Sharp" src={products.image} />
                   </ListItemAvatar>
                   <Typography className={classes.pos}>
-                    {product.name} for ${product.price}
+                    {products.name} for ${products.price}
                   </Typography>
-                    <Button className={classes.button} onClick={() => props.remove(product)} size="small">Remove</Button>
+                    <Button className={classes.button} onClick={() => props.removeFromCart(products)} size="small">Remove</Button>
                 </div>
               )
             })}
