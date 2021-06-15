@@ -18,6 +18,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App(props) {
   return (
     <>
+      <body>
       <BrowserRouter>
         <Header/>
         <Switch>
@@ -35,6 +36,7 @@ function App(props) {
       </Switch>
       <Footer/>
       </BrowserRouter>
+      </body>
     </>
   )
 };

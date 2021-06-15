@@ -13,10 +13,10 @@ import {
   IconButton,
   Container,
 } from "@material-ui/core";
-import { addToCart } from '../../store/cart.js';
+import { addToCart } from "../../store/cart.js";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { positions } from '@material-ui/system';
+import { positions } from "@material-ui/system";
 import { connect } from "react-redux";
 import { ArrowRight } from "@material-ui/icons";
 import { Link, NavLink } from "react-router-dom";
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    backgroundColor: theme.palette.white,
+    backgroundColor: theme.palette.gray,
     color: theme.palette.black,
   },
   toolbarTitle: {
@@ -40,13 +40,13 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: theme.spacing(8, 0, 6)
+    padding: theme.spacing(8, 0, 6),
   },
   cardHeader: {
     backgroundColor: theme.palette.grey[200],
   },
   fullHeight: {
-    height: "100%"
+    height: "100%",
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -72,22 +72,34 @@ function Header(props) {
   const classes = useStyles();
   return (
     <>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      </style>
       <CssBaseline />
       <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             OUR STORE
           </Typography>
-          <Button color="inherit"><NavLink className={classes.link} to="/">HOME</NavLink></Button>
-          <Button id="cartButton" color="inherit"><NavLink className={classes.link} to="/cart">CART ({props.cartReducer.cart.length})</NavLink></Button>
+          <Button color="inherit">
+            <NavLink className={classes.link} to="/">
+              HOME
+            </NavLink>
+          </Button>
+          <Button id="cartButton" color="inherit">
+            <NavLink className={classes.link} to="/cart">
+              CART ({props.cartReducer.cart.length})
+            </NavLink>
+          </Button>
         </Toolbar>
       </AppBar>
     </>
   );
 }
-const mapStateToProps = state => ({
-  cartReducer: state.cartReducer
-})
+const mapStateToProps = (state) => ({
+  cartReducer: state.cartReducer,
+});
 
-const mapDispatchToProps = { addToCart }
+const mapDispatchToProps = { addToCart };
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

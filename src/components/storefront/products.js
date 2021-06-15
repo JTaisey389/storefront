@@ -12,7 +12,7 @@ import {
   Button,
   Typography,
   Grid,
-  Container
+  Container,
 } from "@material-ui/core";
 import * as actions from "../../store/api-actions.js";
 import { activate, reset } from "../../store/products.js";
@@ -21,10 +21,10 @@ import { addToCart } from "../../store/cart.js";
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 10,
-    display: 'inline-block',
+    display: "inline-block",
     maxWidth: 300,
     maxHeight: 400,
-    overflow: 'auto',
+    overflow: "auto",
     flexGrow: 1,
     padding: theme.spacing(2),
   },
@@ -42,35 +42,53 @@ const ActiveProduct = (props) => {
   console.log("API-Products", props.apiReducer.results);
   return (
     <section>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+      </style>
       <Container maxWidth="md" component="main">
         <ul>
           {props.apiReducer.results.map((product) => {
-            // if (product.categoryContainer === props.categoryReducer.selectedCategory)
-            return (
-              <>
-                <Card className={classes.root}>
-                  <CardActions>
-                    <CardMedia component="img" alt={product.name} height="140" image={product.image} title={product.name}/>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {product.name}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {product.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActions>
-                  <CardActions>
-                    <Button onClick={() => props.addToCart(product)}size="small" color="primary">
-                      ADD TO CART
-                    </Button>
-                    <Button size="small" color="primary">
-                      VIEW DETAILS
-                    </Button>
-                  </CardActions>
-                </Card>
-              </>
-            );
+            if (product.categoryContainer === props.categoryReducer.activate)
+              return (
+                <>
+                  <Card className={classes.root}>
+                    <CardActions>
+                      <CardMedia
+                        component="img"
+                        alt={product.name}
+                        height="140"
+                        image={product.image}
+                        title={product.name}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {product.name}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {product.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActions>
+                    <CardActions>
+                      <Button
+                        onClick={() => props.addToCart(product)}
+                        size="small"
+                        color="primary"
+                      >
+                        ADD TO CART
+                      </Button>
+                      <Button size="small" color="primary">
+                        VIEW DETAILS
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </>
+              );
           })}
         </ul>
       </Container>
@@ -89,7 +107,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   get: () => dispatch(actions.getRemoteData()),
   addToCart: (product) => dispatch(addToCart(product)),
-  //TODO delete from cart 
+  //TODO delete from cart
   reset: () => dispatch(reset()),
 });
 

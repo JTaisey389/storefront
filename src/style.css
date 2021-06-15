@@ -1,41 +1,46 @@
+
 main {
-  font-family: helvetica;
+  font-family: 'Poppins', sans-serif;
+  background-color: #C0D6DF;
 }
-
-#category {
-  margin-top: 100px;
-}
-
-#activeCategory {
-  text-align: center;
-  font-size: 50px;
+header {
+  font-family: 'Poppins', sans-serif;
+  background-color: #C0D6DF;
 }
 
 #cartButton {
-  margin-left: 75%;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 65%;
 }
 
 #cartCard {
-  margin-left: 85%;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 90%;
 }
 
 #cartCardProducts {
-  margin-left: 85%;
+  margin-left: 80%;
+  font-family: 'Poppins', sans-serif;
 }
 
 #productDetails{
   margin-top: 100px;
+  font-family: 'Poppins', sans-serif;
 }
 
 #productDetailsTitle {
   text-align: center;
   font-size: 50px;
+  font-family: 'Poppins', sans-serif;
 }
 
 #shoppingCart {
   margin-top: 100px;
+  font-family: 'Poppins', sans-serif;
 }
 
 footer {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #C0D6DF;
 }
